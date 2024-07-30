@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mariadb:
+    image: mariadb:latest
+    container_name: db-sap
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: 1234
+      MARIADB_DATABASE: db-portal-student
+      MARIADB_USER: pedro
+      MARIADB_PASSWORD: 34263210
+    ports:
+    - "55007:3306"
+    volumes:
+    - db_data:/var/lib/mysql
+    
+volumes:
+  db_data:
